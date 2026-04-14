@@ -1,4 +1,10 @@
+import { joinURL } from 'ufo'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const baseURL = process.env.NUXT_APP_BASE_URL || '/'
+const siteOrigin = process.env.HARNESS_SITE_ORIGIN || 'http://localhost:3000'
+const siteUrl = joinURL(siteOrigin, baseURL)
+
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
@@ -6,12 +12,15 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/content',
     'nuxt-og-image',
-    'nuxt-llms',
-    '@nuxtjs/mcp-toolkit'
+    'nuxt-llms'
   ],
 
   devtools: {
     enabled: true
+  },
+
+  app: {
+    baseURL
   },
 
   css: ['~/assets/css/main.css'],
@@ -23,6 +32,13 @@ export default defineNuxtConfig({
           searchDepth: 1
         }
       }
+    }
+  },
+
+  runtimeConfig: {
+    public: {
+      siteOrigin,
+      siteUrl
     }
   },
 
@@ -56,32 +72,105 @@ export default defineNuxtConfig({
   },
 
   llms: {
-    domain: 'https://docs-template.nuxt.dev/',
-    title: 'Nuxt Docs Template',
-    description: 'A template for building documentation with Nuxt UI and Nuxt Content.',
+    domain: siteUrl,
+    title: 'Harness',
+    description: 'A technical guide to how modern AI coding agents are built.',
     full: {
-      title: 'Nuxt Docs Template - Full Documentation',
-      description: 'This is the full documentation for the Nuxt Docs Template.'
+      title: 'Harness - Full Documentation',
+      description: 'The full documentation set comparing Codex CLI, Claude Code, OpenCode, Pi, and Hermes.'
     },
     sections: [
       {
-        title: 'Getting Started',
+        title: 'Overview',
         contentCollection: 'docs',
         contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/getting-started%' }
+          { field: 'path', operator: 'LIKE', value: '/overview%' }
         ]
       },
       {
-        title: 'Essentials',
+        title: 'Architecture',
         contentCollection: 'docs',
         contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/essentials%' }
+          { field: 'path', operator: 'LIKE', value: '/architecture%' }
+        ]
+      },
+      {
+        title: 'Agent Loop',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/agent-loop%' }
+        ]
+      },
+      {
+        title: 'Tool System',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/tool-system%' }
+        ]
+      },
+      {
+        title: 'File Search',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/file-search%' }
+        ]
+      },
+      {
+        title: 'File Editing',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/file-editing%' }
+        ]
+      },
+      {
+        title: 'Sandbox & Security',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/sandbox-security%' }
+        ]
+      },
+      {
+        title: 'Permissions',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/permissions%' }
+        ]
+      },
+      {
+        title: 'Context Management',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/context-management%' }
+        ]
+      },
+      {
+        title: 'Prompt Engineering',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/prompt-engineering%' }
+        ]
+      },
+      {
+        title: 'Model & API Integration',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/model-integration%' }
+        ]
+      },
+      {
+        title: 'Multi-Agent Architecture',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/multi-agent%' }
+        ]
+      },
+      {
+        title: 'Appendix',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/appendix%' }
         ]
       }
     ]
-  },
-
-  mcp: {
-    name: 'Docs template'
   }
 })

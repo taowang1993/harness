@@ -1,62 +1,40 @@
-# Nuxt Docs Template
+# Harness
 
-[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
+Harness is a Nuxt UI + Nuxt Content documentation site about how modern AI coding agents are built.
 
-Use this template to build your own documentation with [Nuxt UI](https://ui.nuxt.com) quickly.
+It compares **Codex CLI**, **Claude Code**, **OpenCode**, **Pi**, and **Hermes** across architecture, execution loops, tool systems, search, editing, security, permissions, context management, prompt assembly, model integration, and multi-agent behavior.
 
-- [Live demo](https://docs-template.nuxt.dev/)
-- [Documentation](https://ui.nuxt.com/docs/getting-started/installation/nuxt)
+## Project Structure
 
-<a href="https://docs-template.nuxt.dev/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/docs-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/docs-light.png">
-    <img alt="Nuxt Docs Template" src="https://ui.nuxt.com/assets/templates/nuxt/docs-light.png">
-  </picture>
-</a>
-
-## Quick Start
-
-```bash [Terminal]
-npm create nuxt@latest -- -t ui/docs
+```text
+.
+├── .github/workflows/      # CI and GitHub Pages deployment
+├── app/                    # Nuxt app shell, components, layouts, and pages
+├── content/                # Long-form documentation chapters and appendix pages
+├── public/                 # Static assets such as favicons
+├── content.config.ts       # Nuxt Content collections
+├── nuxt.config.ts          # Nuxt app and module configuration
+├── package.json            # Scripts and dependencies
+└── tsconfig.json           # TypeScript config
 ```
 
-## Deploy your own
+## Tech Stack
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=docs&repository-url=https%3A%2F%2Fgithub.com%2Fnuxt-ui-templates%2Fdocs&demo-image=https%3A%2F%2Fui.nuxt.com%2Fassets%2Ftemplates%2Fnuxt%2Fdocs-dark.png&demo-url=https%3A%2F%2Fdocs-template.nuxt.dev%2F&demo-title=Nuxt%20Docs%20Template&demo-description=A%20documentation%20template%20powered%20by%20Nuxt%20Content.)
+- Nuxt 4
+- Nuxt UI
+- Nuxt Content
+- Nuxt Image
+- nuxt-og-image
+- nuxt-llms
+- Tailwind CSS v4
+- TypeScript
+- pnpm
+- GitHub Actions + GitHub Pages
 
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-pnpm install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-pnpm dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-pnpm build
-```
-
-Locally preview production build:
-
-```bash
-pnpm preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-
-## Renovate integration
-
-Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
+| Agent | Language | Core Runtime Shape | Tooling Model | Sandbox / Security Model | Context Strategy | Multi-Agent Support |
+|---|---|---|---|---|---|---|
+| Codex CLI | Rust | Native CLI | Structured built-in tools + shell flows | OS/process-level controls with approval-driven execution | Session history with compaction and continuation | Limited / task-oriented delegation |
+| Claude Code | TypeScript | Node.js CLI | Rich tool registry with strong product-level affordances | Approval rules + sandbox-aware execution modes | Transcript management with summarization and carry-forward context | Supports sub-agents / delegated flows |
+| OpenCode | TypeScript | Node.js app/CLI | Extensible tool surface with app-layer orchestration | Policy-driven execution with approvals and runtime controls | Persistent conversational context with session orchestration | Strong multi-agent orientation |
+| Pi | TypeScript | Local coding-agent runtime | API/tool-call model with skills, extensions, and custom tools | Secure Workspace sandboxing plus host-broker boundaries | Session persistence, truncation, and tool-result-aware transcript handling | Single-agent by default, extensible by architecture |
+| Hermes | Python | Agent framework / service runtime | Python tool abstractions and agent-task composition | Framework-level controls, environment isolation, and operator-managed boundaries | Memory and runtime state management across agent tasks | Designed for multi-agent coordination |
