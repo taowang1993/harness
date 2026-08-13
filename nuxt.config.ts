@@ -77,7 +77,7 @@ export default defineNuxtConfig({
     description: 'A technical guide to how modern AI coding agents are built.',
     full: {
       title: 'Harness - Full Documentation',
-      description: 'The full documentation set comparing Codex CLI, Claude Code, OpenCode, Pi, and Hermes.'
+      description: 'The full documentation set comparing Codex CLI, DeepSeek Harness, OpenCode, Pi, and Hermes.'
     },
     sections: [
       {

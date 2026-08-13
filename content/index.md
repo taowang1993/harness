@@ -8,7 +8,7 @@ seo:
 
 <div class="mx-auto max-w-3xl space-y-4 text-center">
   <p>Harness is a technical guide to how modern AI coding agents are built.</p>
-  <p>This documentation compares <strong>Codex CLI</strong>, <strong>Claude Code</strong>, <strong>OpenCode</strong>, <strong>Pi</strong>, and <strong>Hermes</strong> across architecture, execution loops, tool systems, search, editing, security, permissions, context management, prompt assembly, model integration, and multi-agent behavior.</p>
+  <p>This documentation compares <strong>Codex CLI</strong>, <strong>DeepSeek Harness</strong>, <strong>OpenCode</strong>, <strong>Pi</strong>, and <strong>Hermes</strong> across architecture, execution loops, tool systems, search, editing, security, permissions, context management, prompt assembly, model integration, and multi-agent behavior.</p>
 </div>
 
 ## Start Here
@@ -35,7 +35,7 @@ seo:
 | Harness | Vendor | Language | Repository |
 |---------|--------|----------|------------|
 | **Codex CLI** | OpenAI | Rust | [openai/codex](https://github.com/openai/codex) |
-| **Claude Code** | Anthropic | TypeScript | [ultraworkers/claw-code](https://github.com/ultraworkers/claw-code) |
+| **DeepSeek Harness** | DeepSeek AI | TypeScript | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) |
 | **OpenCode** | Anomaly / OpenCode | TypeScript | [anomalyco/opencode](https://github.com/anomalyco/opencode) |
 | **Pi** | Mario Zechner | TypeScript | [badlogic/pi-mono](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent) |
 | **Hermes** | Nous Research | Python | [nousresearch/hermes-agent](https://github.com/nousresearch/hermes-agent) |
